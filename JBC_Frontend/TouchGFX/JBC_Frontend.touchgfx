@@ -1,0 +1,229 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Main",
+        "CanvasBufferSize": 7200,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "background",
+            "Width": 480,
+            "Height": 272,
+            "RelativeFilename": "__designer\\Blue_Backgrounds_Main_bg_480x272px.png"
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "graphBackground",
+            "Width": 480,
+            "Height": 272,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaState",
+            "X": 428,
+            "Y": 157,
+            "Width": 31,
+            "Height": 16,
+            "TextId": "__SingleUse_K4YC",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "State"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "LabelSetPoint",
+            "X": 407,
+            "Y": 100,
+            "Width": 73,
+            "Height": 16,
+            "TextId": "__SingleUse_YK8M",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "LabelState",
+            "X": 422,
+            "Y": 141,
+            "Width": 43,
+            "Height": 16,
+            "TextId": "__SingleUse_J1YW",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "Graph",
+            "Width": 419,
+            "Height": 272,
+            "DataSeed": -1707652602,
+            "NumberOfValues": 101,
+            "MaxY": 450.0,
+            "MinY": 50.0,
+            "Precision": "1",
+            "UseCustomVisibleDataPointRange": true,
+            "LastIndex": 100,
+            "XAxisScale": 1.0,
+            "LabelSizeTop": 10,
+            "LabelSizeBottom": 22,
+            "LabelSizeLeft": 28,
+            "LabelSizeRight": 19,
+            "PaddingTop": 2,
+            "PaddingBottom": 6,
+            "PaddingLeft": 6,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 196,
+                  "Green": 22,
+                  "Blue": 22
+                }
+              }
+            ],
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Interval": 50.0,
+              "LineWidth": 1
+            },
+            "XAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 10.0,
+              "DecimalSeparator": "Point",
+              "TextId": "__SingleUse_81ZS",
+              "TextRotation": "0",
+              "Position": "Bottom"
+            },
+            "YAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 50.0,
+              "DecimalSeparator": "Point",
+              "TextId": "__SingleUse_Y6XC",
+              "TextRotation": "0",
+              "Position": "Left"
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "ButtonUp",
+            "X": 419,
+            "Y": 38,
+            "Width": 48,
+            "Height": 48,
+            "Pressed": "__generated\\icon_theme_images_action_arrow_circle_up_48_48_000000.svg.png",
+            "Released": "__generated\\icon_theme_images_action_arrow_circle_up_48_48_000000.svg.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "ButtonDown",
+            "X": 419,
+            "Y": 187,
+            "Width": 48,
+            "Height": 48,
+            "Pressed": "__generated\\icon_theme_images_action_arrow_circle_down_48_48_000000.svg.png",
+            "Released": "__generated\\icon_theme_images_action_arrow_circle_down_48_48_000000.svg.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TextAreaSetPoint",
+            "X": 425,
+            "Y": 116,
+            "Width": 50,
+            "Height": 16,
+            "TextId": "__SingleUse_LUUA",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "Temperatur",
+              "UseBuffer": true,
+              "BufferSize": 4
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "SliderValueChanged",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "sliderValueChanged"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "JBC_Frontend",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Main",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 480,
+        "Height": 272
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommand": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommand": "make -f ../gcc/Makefile flash -j8",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32F7",
+    "SubFamily": "STM32F7x0 Value line",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m7",
+    "ProjectFile": "../STM32F7508-DK.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "CWRVector",
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.24.2",
+  "CreatedBy": "4.24.2"
+}
