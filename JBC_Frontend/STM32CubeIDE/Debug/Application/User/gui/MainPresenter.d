@@ -1,5 +1,5 @@
 Application/User/gui/MainPresenter.o: \
- C:/TouchGFXProjects/JBC_FrontEnd/JBC_Frontend/TouchGFX/gui/src/main_screen/MainPresenter.cpp \
+ C:/TouchGFXProjects/JBC_Frontend/TouchGFX/gui/src/main_screen/MainPresenter.cpp \
  ../../TouchGFX/gui/include/gui/main_screen/MainView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/main_screen/MainViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \

@@ -92,6 +92,15 @@ GraphElements.hpp:255:18:virtual bool touchgfx::AbstractGraphElementNoCWR::drawC
 GraphElements.hpp:272:18:virtual void touchgfx::AbstractGraphElementNoCWR::setPainter(touchgfx::AbstractPainter&)	0	static
 GraphElements.hpp:414:18:virtual void touchgfx::GraphElementGridBase::invalidateGraphPointAt(int16_t)	0	static
 GraphElements.hpp:436:17:virtual int touchgfx::GraphElementGridBase::getCorrectlyScaledMajorInterval(const touchgfx::AbstractDataGraph*) const	0	static
+GraphElements.hpp:566:18:virtual touchgfx::Rect touchgfx::GraphElementGridX::enclosingArea(const touchgfx::AbstractDataGraph*) const	12	static
+GraphElements.hpp:571:18:virtual touchgfx::Rect touchgfx::GraphElementGridX::lineRect(int16_t, int16_t, int16_t, int16_t) const	8	static
+GraphElements.hpp:576:17:virtual int touchgfx::GraphElementGridX::getGraphRangeMinScaled(const touchgfx::AbstractDataGraph*) const	0	static
+GraphElements.hpp:581:17:virtual int touchgfx::GraphElementGridX::getGraphRangeMaxScaled(const touchgfx::AbstractDataGraph*) const	0	static
+GraphElements.hpp:586:17:virtual int touchgfx::GraphElementGridX::getGraphAreaStart(const touchgfx::AbstractDataGraph*) const	0	static
+GraphElements.hpp:591:17:virtual int touchgfx::GraphElementGridX::getGraphAreaLength(const touchgfx::AbstractDataGraph*) const	0	static
+GraphElements.hpp:596:17:virtual int touchgfx::GraphElementGridX::getGraphAreaStartPos(const touchgfx::AbstractDataGraph*) const	0	static
+GraphElements.hpp:601:17:virtual int touchgfx::GraphElementGridX::getGraphAreaEndPos(const touchgfx::AbstractDataGraph*) const	0	static
+GraphElements.hpp:606:25:virtual touchgfx::CWRUtil::Q5 touchgfx::GraphElementGridX::valueToScreenQ5(const touchgfx::AbstractDataGraph*, int) const	0	static
 GraphElements.hpp:627:18:virtual touchgfx::Rect touchgfx::GraphElementGridY::enclosingArea(const touchgfx::AbstractDataGraph*) const	12	static
 GraphElements.hpp:632:18:virtual touchgfx::Rect touchgfx::GraphElementGridY::lineRect(int16_t, int16_t, int16_t, int16_t) const	0	static
 GraphElements.hpp:637:17:virtual int touchgfx::GraphElementGridY::getGraphRangeMinScaled(const touchgfx::AbstractDataGraph*) const	0	static
@@ -101,22 +110,32 @@ GraphElements.hpp:652:17:virtual int touchgfx::GraphElementGridY::getGraphAreaLe
 GraphElements.hpp:657:17:virtual int touchgfx::GraphElementGridY::getGraphAreaStartPos(const touchgfx::AbstractDataGraph*) const	0	static
 GraphElements.hpp:662:17:virtual int touchgfx::GraphElementGridY::getGraphAreaEndPos(const touchgfx::AbstractDataGraph*) const	0	static
 GraphElements.hpp:667:25:virtual touchgfx::CWRUtil::Q5 touchgfx::GraphElementGridY::valueToScreenQ5(const touchgfx::AbstractDataGraph*, int) const	0	static
+MainViewBase.hpp:31:18:virtual void MainViewBase::ButtonUPClicked()	0	static
+MainViewBase.hpp:35:18:virtual void MainViewBase::ButtonDownClicked()	0	static
 View.hpp:36:7:touchgfx::View<MainPresenter>::~View()	0	static
-MainViewBase.cpp:103:6:virtual void MainViewBase::setupScreen()	0	static
+MainViewBase.cpp:119:6:virtual void MainViewBase::setupScreen()	0	static
+Callback.hpp:357:8:touchgfx::Callback<MainViewBase, const touchgfx::AbstractButton&>::~Callback()	0	static
 GraphScroll.hpp:76:7:touchgfx::GraphScroll<101>::~GraphScroll()	0	static
 GraphElements.hpp:618:7:touchgfx::GraphElementGridY::~GraphElementGridY()	0	static
+GraphElements.hpp:557:7:touchgfx::GraphElementGridX::~GraphElementGridX()	0	static
 TextAreaWithWildcard.hpp:62:7:touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	0	static
+Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = MainViewBase; T1 = const touchgfx::AbstractButton&]	8	static
+Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = MainViewBase; T1 = const touchgfx::AbstractButton&]	0	static
 TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	8	static
 View.hpp:36:7:virtual touchgfx::View<MainPresenter>::~View()	8	static
 TextAreaWithWildcard.hpp:62:7:virtual touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	8	static
 GraphScroll.hpp:76:7:virtual touchgfx::GraphScroll<101>::~GraphScroll()	8	static
+GraphElements.hpp:557:7:virtual touchgfx::GraphElementGridX::~GraphElementGridX()	8	static
 GraphElements.hpp:618:7:virtual touchgfx::GraphElementGridY::~GraphElementGridY()	8	static
+Callback.hpp:357:8:virtual touchgfx::Callback<MainViewBase, const touchgfx::AbstractButton&>::~Callback()	8	static
 AbstractDataGraph.hpp:1591:17:virtual int touchgfx::DynamicDataGraph::indexToDataPointYScaled(int16_t) const	8	static
 AbstractDataGraph.hpp:1585:17:virtual int touchgfx::DynamicDataGraph::indexToDataPointXScaled(int16_t) const	8	static
 TextArea.hpp:111:18:virtual void touchgfx::TextArea::setBaselineY(int16_t)	16	static
+GraphElements.hpp:560:17:virtual int touchgfx::GraphElementGridX::getCorrectlyScaledGridInterval(const touchgfx::AbstractDataGraph*) const	16	static
 GraphElements.hpp:621:17:virtual int touchgfx::GraphElementGridY::getCorrectlyScaledGridInterval(const touchgfx::AbstractDataGraph*) const	16	static
-MainViewBase.cpp:98:1:MainViewBase::~MainViewBase()	8	static
-MainViewBase.cpp:98:1:virtual MainViewBase::~MainViewBase()	8	static
+MainViewBase.cpp:114:1:MainViewBase::~MainViewBase()	8	static
+MainViewBase.cpp:114:1:virtual MainViewBase::~MainViewBase()	8	static
+MainViewBase.cpp:124:6:void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	16	static
 TextAreaWithWildcard.hpp:49:36:virtual touchgfx::TextArea::BoundingArea touchgfx::TextAreaWithWildcardBase::calculateBoundingArea() const	0	static
 Drawable.hpp:48:5:touchgfx::Drawable::Drawable()	0	static
 Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
@@ -126,7 +145,7 @@ TextArea.hpp:43:5:touchgfx::TextArea::TextArea()	8	static
 CWRUtil.hpp:828:15:static touchgfx::CWRUtil::Q5 touchgfx::CWRUtil::muldiv_toQ5(int32_t, int32_t, int32_t)	24	static
 AbstractDataGraph.hpp:1282:25:virtual touchgfx::CWRUtil::Q5 touchgfx::AbstractDataGraph::valueToScreenYQ5(int) const	16	static
 AbstractDataGraph.hpp:1270:25:virtual touchgfx::CWRUtil::Q5 touchgfx::AbstractDataGraph::valueToScreenXQ5(int) const	16	static
-GraphLabels.hpp:43:5:touchgfx::GraphLabelsBase::GraphLabelsBase()	8	static
 AbstractPainterRGB565.hpp:41:5:touchgfx::AbstractPainterRGB565::AbstractPainterRGB565()	16	static
 Button.hpp:34:5:touchgfx::Button::Button()	8	static
-MainViewBase.cpp:10:1:MainViewBase::MainViewBase()	128	static
+GraphScroll.hpp:79:5:touchgfx::GraphScroll<CAPACITY>::GraphScroll() [with short int CAPACITY = 101]	16	static
+MainViewBase.cpp:10:1:MainViewBase::MainViewBase()	144	static

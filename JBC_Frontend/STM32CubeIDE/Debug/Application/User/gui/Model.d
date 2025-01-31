@@ -1,5 +1,5 @@
 Application/User/gui/Model.o: \
- C:/TouchGFXProjects/JBC_FrontEnd/JBC_Frontend/TouchGFX/gui/src/model/Model.cpp \
+ C:/TouchGFXProjects/JBC_Frontend/TouchGFX/gui/src/model/Model.cpp \
  ../../TouchGFX/gui/include/gui/model/Model.hpp \
  ../../TouchGFX/gui/include/gui/model/ModelListener.hpp
 ../../TouchGFX/gui/include/gui/model/Model.hpp:

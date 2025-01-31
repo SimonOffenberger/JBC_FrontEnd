@@ -1,0 +1,10 @@
+C:/TouchGFXProjects/JBC_Frontend/Drivers/BSP/STM32F7508-Discovery/stm32f7508_discovery_sdram.c:205:6:BSP_SDRAM_Initialization_sequence	1
+C:/TouchGFXProjects/JBC_Frontend/Drivers/BSP/STM32F7508-Discovery/stm32f7508_discovery_sdram.c:267:9:BSP_SDRAM_ReadData	1
+C:/TouchGFXProjects/JBC_Frontend/Drivers/BSP/STM32F7508-Discovery/stm32f7508_discovery_sdram.c:286:9:BSP_SDRAM_ReadData_DMA	1
+C:/TouchGFXProjects/JBC_Frontend/Drivers/BSP/STM32F7508-Discovery/stm32f7508_discovery_sdram.c:305:9:BSP_SDRAM_WriteData	1
+C:/TouchGFXProjects/JBC_Frontend/Drivers/BSP/STM32F7508-Discovery/stm32f7508_discovery_sdram.c:324:9:BSP_SDRAM_WriteData_DMA	1
+C:/TouchGFXProjects/JBC_Frontend/Drivers/BSP/STM32F7508-Discovery/stm32f7508_discovery_sdram.c:341:9:BSP_SDRAM_Sendcmd	1
+C:/TouchGFXProjects/JBC_Frontend/Drivers/BSP/STM32F7508-Discovery/stm32f7508_discovery_sdram.c:359:13:BSP_SDRAM_MspInit	1
+C:/TouchGFXProjects/JBC_Frontend/Drivers/BSP/STM32F7508-Discovery/stm32f7508_discovery_sdram.c:130:9:BSP_SDRAM_Init	1
+C:/TouchGFXProjects/JBC_Frontend/Drivers/BSP/STM32F7508-Discovery/stm32f7508_discovery_sdram.c:450:13:BSP_SDRAM_MspDeInit	1
+C:/TouchGFXProjects/JBC_Frontend/Drivers/BSP/STM32F7508-Discovery/stm32f7508_discovery_sdram.c:179:9:BSP_SDRAM_DeInit	1

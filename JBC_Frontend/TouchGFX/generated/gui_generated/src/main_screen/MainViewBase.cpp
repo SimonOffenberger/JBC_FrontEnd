@@ -7,7 +7,8 @@
 #include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-MainViewBase::MainViewBase()
+MainViewBase::MainViewBase() :
+    buttonCallback(this, &MainViewBase::buttonCallbackHandler)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
     
@@ -30,7 +31,7 @@ MainViewBase::MainViewBase()
     textAreaState.setLinespacing(0);
     textAreaState.setWildcard(touchgfx::TypedText(T_STATE).getText());
     textAreaState.resizeToCurrentText();
-    textAreaState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K4YC));
+    textAreaState.setTypedText(touchgfx::TypedText(T_STATEBUF));
     add(textAreaState);
 
     LabelSetPoint.setXY(407, 100);
@@ -45,44 +46,59 @@ MainViewBase::MainViewBase()
     LabelState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_J1YW));
     add(LabelState);
 
-    Graph.setPosition(0, 0, 419, 272);
-    Graph.setScale(1);
-    Graph.setGraphRangeX(0, 100);
-    Graph.setGraphAreaMargin(10, 28, 19, 22);
-    Graph.setGraphAreaPadding(2, 6, 0, 6);
-    Graph.setGraphRangeY(50, 450);
-    GraphMajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    GraphMajorYAxisGrid.setInterval(50);
-    GraphMajorYAxisGrid.setLineWidth(1);
-    GraphMajorYAxisGrid.setScale(1);
-    Graph.addGraphElement(GraphMajorYAxisGrid);
+    SetPointGraph.setPosition(0, -1, 419, 290);
+    SetPointGraph.setScale(1);
+    SetPointGraph.setGraphRangeX(0, 100);
+    SetPointGraph.setGraphAreaMargin(10, 28, 19, 22);
+    SetPointGraph.setGraphAreaPadding(2, 6, 0, 6);
+    SetPointGraph.setGraphRangeY(100, 500);
+    SetPointGraphMajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    SetPointGraphMajorXAxisGrid.setInterval(10);
+    SetPointGraphMajorXAxisGrid.setLineWidth(1);
+    SetPointGraphMajorXAxisGrid.setScale(1);
+    SetPointGraph.addGraphElement(SetPointGraphMajorXAxisGrid);
 
-    GraphMajorXAxisLabel.setInterval(10);
-    GraphMajorXAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_81ZS));
-    GraphMajorXAxisLabel.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    GraphMajorXAxisLabel.setScale(1);
-    Graph.addBottomElement(GraphMajorXAxisLabel);
+    SetPointGraphMajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    SetPointGraphMajorYAxisGrid.setInterval(40);
+    SetPointGraphMajorYAxisGrid.setLineWidth(1);
+    SetPointGraphMajorYAxisGrid.setScale(1);
+    SetPointGraph.addGraphElement(SetPointGraphMajorYAxisGrid);
 
-    GraphMajorYAxisLabel.setInterval(50);
-    GraphMajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_Y6XC));
-    GraphMajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    GraphMajorYAxisLabel.setScale(1);
-    Graph.addLeftElement(GraphMajorYAxisLabel);
+    SetPointGraphMajorYAxisLabel.setInterval(50);
+    SetPointGraphMajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_8RXG));
+    SetPointGraphMajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    SetPointGraphMajorYAxisLabel.setScale(1);
+    SetPointGraph.addLeftElement(SetPointGraphMajorYAxisLabel);
 
-    GraphLine1Painter.setColor(touchgfx::Color::getColorFromRGB(196, 22, 22));
-    GraphLine1.setPainter(GraphLine1Painter);
-    GraphLine1.setLineWidth(2);
-    Graph.addGraphElement(GraphLine1);
+    SetPointGraphLine1Painter.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    SetPointGraphLine1.setPainter(SetPointGraphLine1Painter);
+    SetPointGraphLine1.setLineWidth(2);
+    SetPointGraph.addGraphElement(SetPointGraphLine1);
 
 
-    add(Graph);
+    add(SetPointGraph);
+
+    CurrTempGraph.setPosition(0, 0, 419, 289);
+    CurrTempGraph.setScale(1);
+    CurrTempGraph.setGraphRangeX(0, 100);
+    CurrTempGraph.setGraphAreaMargin(10, 28, 19, 22);
+    CurrTempGraph.setGraphAreaPadding(2, 6, 0, 6);
+    CurrTempGraph.setGraphRangeY(100, 500);
+    CurrTempGraphLine1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    CurrTempGraphLine1.setPainter(CurrTempGraphLine1Painter);
+    CurrTempGraphLine1.setLineWidth(2);
+    CurrTempGraph.addGraphElement(CurrTempGraphLine1);
+
+    add(CurrTempGraph);
 
     ButtonUp.setXY(419, 38);
-    ButtonUp.setBitmaps(touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ARROW_CIRCLE_UP_48_48_000000_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ARROW_CIRCLE_UP_48_48_000000_SVG_ID));
+    ButtonUp.setBitmaps(touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ARROW_CIRCLE_UP_48_48_FA0707_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ARROW_CIRCLE_UP_48_48_000000_SVG_ID));
+    ButtonUp.setAction(buttonCallback);
     add(ButtonUp);
 
     ButtonDown.setXY(419, 187);
-    ButtonDown.setBitmaps(touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ARROW_CIRCLE_DOWN_48_48_000000_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ARROW_CIRCLE_DOWN_48_48_000000_SVG_ID));
+    ButtonDown.setBitmaps(touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ARROW_CIRCLE_DOWN_48_48_0A12FA_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ARROW_CIRCLE_DOWN_48_48_000000_SVG_ID));
+    ButtonDown.setAction(buttonCallback);
     add(ButtonDown);
 
     TextAreaSetPoint.setXY(425, 116);
@@ -91,7 +107,7 @@ MainViewBase::MainViewBase()
     Unicode::snprintf(TextAreaSetPointBuffer, TEXTAREASETPOINT_SIZE, "%s", touchgfx::TypedText(T_TEMPERATUR).getText());
     TextAreaSetPoint.setWildcard(TextAreaSetPointBuffer);
     TextAreaSetPoint.resizeToCurrentText();
-    TextAreaSetPoint.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LUUA));
+    TextAreaSetPoint.setTypedText(touchgfx::TypedText(T_TEMPSETPOINTBUF));
     add(TextAreaSetPoint);
 }
 
@@ -103,4 +119,22 @@ MainViewBase::~MainViewBase()
 void MainViewBase::setupScreen()
 {
 
+}
+
+void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &ButtonUp)
+    {
+        //IncreaseTemp
+        //When ButtonUp clicked call virtual function
+        //Call ButtonUPClicked
+        ButtonUPClicked();
+    }
+    if (&src == &ButtonDown)
+    {
+        //DecreaseTemp
+        //When ButtonDown clicked call virtual function
+        //Call ButtonDownClicked
+        ButtonDownClicked();
+    }
 }

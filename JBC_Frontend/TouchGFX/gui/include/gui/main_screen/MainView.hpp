@@ -11,8 +11,11 @@ public:
     virtual ~MainView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void ButtonUPClicked();
+    virtual void ButtonDownClicked();
 protected:
     int tickCounter;
+    int SetTemp = 350;
 
     void handleTickEvent();
     virtual void sliderValueChanged(int value);

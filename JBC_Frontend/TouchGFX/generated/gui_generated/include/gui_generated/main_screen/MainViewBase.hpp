@@ -25,6 +25,18 @@ public:
     virtual ~MainViewBase();
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void ButtonUPClicked()
+    {
+        // Override and implement this function in Main
+    }
+    virtual void ButtonDownClicked()
+    {
+        // Override and implement this function in Main
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -39,12 +51,15 @@ protected:
     touchgfx::TextAreaWithOneWildcard textAreaState;
     touchgfx::TextArea LabelSetPoint;
     touchgfx::TextArea LabelState;
-    touchgfx::GraphScroll<101> Graph;
-    touchgfx::GraphElementGridY GraphMajorYAxisGrid;
-    touchgfx::GraphLabelsX GraphMajorXAxisLabel;
-    touchgfx::GraphLabelsY GraphMajorYAxisLabel;
-    touchgfx::GraphElementLine GraphLine1;
-    touchgfx::PainterRGB565 GraphLine1Painter;
+    touchgfx::GraphScroll<101> SetPointGraph;
+    touchgfx::GraphElementGridX SetPointGraphMajorXAxisGrid;
+    touchgfx::GraphElementGridY SetPointGraphMajorYAxisGrid;
+    touchgfx::GraphLabelsY SetPointGraphMajorYAxisLabel;
+    touchgfx::GraphElementLine SetPointGraphLine1;
+    touchgfx::PainterRGB565 SetPointGraphLine1Painter;
+    touchgfx::GraphScroll<101> CurrTempGraph;
+    touchgfx::GraphElementLine CurrTempGraphLine1;
+    touchgfx::PainterRGB565 CurrTempGraphLine1Painter;
     touchgfx::Button ButtonUp;
     touchgfx::Button ButtonDown;
     touchgfx::TextAreaWithOneWildcard TextAreaSetPoint;
@@ -62,6 +77,16 @@ private:
      */
     static const uint32_t CANVAS_BUFFER_SIZE = 7200;
     uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<MainViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

@@ -30,8 +30,8 @@
             "X": 428,
             "Y": 157,
             "Width": 31,
-            "Height": 16,
-            "TextId": "__SingleUse_K4YC",
+            "Height": 19,
+            "TextId": "StateBuf",
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
@@ -44,7 +44,7 @@
             "X": 407,
             "Y": 100,
             "Width": 73,
-            "Height": 16,
+            "Height": 19,
             "TextId": "__SingleUse_YK8M",
             "TextRotation": "0",
             "AutoSize": true
@@ -55,20 +55,21 @@
             "X": 422,
             "Y": 141,
             "Width": 43,
-            "Height": 16,
+            "Height": 19,
             "TextId": "__SingleUse_J1YW",
             "TextRotation": "0",
             "AutoSize": true
           },
           {
             "Type": "DynamicGraph",
-            "Name": "Graph",
+            "Name": "SetPointGraph",
+            "Y": -1,
             "Width": 419,
-            "Height": 272,
+            "Height": 290,
             "DataSeed": -1707652602,
             "NumberOfValues": 101,
-            "MaxY": 450.0,
-            "MinY": 50.0,
+            "MaxY": 500.0,
+            "MinY": 100.0,
             "Precision": "1",
             "UseCustomVisibleDataPointRange": true,
             "LastIndex": 100,
@@ -87,33 +88,62 @@
                 "LineWidth": 2,
                 "FileNameImage": "",
                 "Color": {
-                  "Red": 196,
-                  "Green": 22,
-                  "Blue": 22
+                  "Red": 20,
+                  "Green": 151,
+                  "Blue": 197
                 }
               }
             ],
-            "YAxisGrid": {
+            "XAxisGrid": {
               "Type": "GraphGrid",
-              "Interval": 50.0,
+              "Interval": 10.0,
               "LineWidth": 1
             },
-            "XAxisLabel": {
-              "Type": "GraphLabel",
-              "Interval": 10.0,
-              "DecimalSeparator": "Point",
-              "TextId": "__SingleUse_81ZS",
-              "TextRotation": "0",
-              "Position": "Bottom"
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Interval": 40.0,
+              "LineWidth": 1
             },
             "YAxisLabel": {
               "Type": "GraphLabel",
               "Interval": 50.0,
               "DecimalSeparator": "Point",
-              "TextId": "__SingleUse_Y6XC",
+              "TextId": "__SingleUse_8RXG",
               "TextRotation": "0",
               "Position": "Left"
             }
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "CurrTempGraph",
+            "Width": 419,
+            "Height": 289,
+            "DataSeed": -1707652602,
+            "NumberOfValues": 101,
+            "MaxY": 500.0,
+            "MinY": 100.0,
+            "Precision": "1",
+            "UseCustomVisibleDataPointRange": true,
+            "LastIndex": 100,
+            "XAxisScale": 1.0,
+            "LabelSizeTop": 10,
+            "LabelSizeBottom": 22,
+            "LabelSizeLeft": 28,
+            "LabelSizeRight": 19,
+            "PaddingTop": 2,
+            "PaddingBottom": 6,
+            "PaddingLeft": 6,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 255
+                }
+              }
+            ]
           },
           {
             "Type": "Button",
@@ -123,7 +153,7 @@
             "Width": 48,
             "Height": 48,
             "Pressed": "__generated\\icon_theme_images_action_arrow_circle_up_48_48_000000.svg.png",
-            "Released": "__generated\\icon_theme_images_action_arrow_circle_up_48_48_000000.svg.png"
+            "Released": "__generated\\icon_theme_images_action_arrow_circle_up_48_48_FA0707.svg.png"
           },
           {
             "Type": "Button",
@@ -133,7 +163,7 @@
             "Width": 48,
             "Height": 48,
             "Pressed": "__generated\\icon_theme_images_action_arrow_circle_down_48_48_000000.svg.png",
-            "Released": "__generated\\icon_theme_images_action_arrow_circle_down_48_48_000000.svg.png"
+            "Released": "__generated\\icon_theme_images_action_arrow_circle_down_48_48_0A12FA.svg.png"
           },
           {
             "Type": "TextArea",
@@ -141,8 +171,8 @@
             "X": 425,
             "Y": 116,
             "Width": 50,
-            "Height": 16,
-            "TextId": "__SingleUse_LUUA",
+            "Height": 19,
+            "TextId": "TempSetPointBuf",
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
@@ -154,13 +184,25 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "SliderValueChanged",
+            "InteractionName": "IncreaseTemp",
             "Trigger": {
-              "Type": "TriggerSliderValueChanged"
+              "Type": "TriggerClicked",
+              "TriggerComponent": "ButtonUp"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "sliderValueChanged"
+              "FunctionName": "ButtonUPClicked"
+            }
+          },
+          {
+            "InteractionName": "DecreaseTemp",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "ButtonDown"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ButtonDownClicked"
             }
           }
         ]

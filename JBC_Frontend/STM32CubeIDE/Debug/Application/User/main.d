@@ -1,5 +1,4 @@
-Application/User/main.o: \
- C:/TouchGFXProjects/JBC_FrontEnd/JBC_Frontend/Core/Src/main.c \
+Application/User/main.o: C:/TouchGFXProjects/JBC_Frontend/Core/Src/main.c \
  ../../Core/Inc/main.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
