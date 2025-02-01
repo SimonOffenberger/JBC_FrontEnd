@@ -13,6 +13,9 @@ class MainPresenter : public touchgfx::Presenter, public ModelListener
 public:
     MainPresenter(MainView& v);
 
+    virtual void SetNewSetTemp(int SetTemp);
+    virtual void SetNewCurrTemp(int CurrTemp);
+
     /**
      * The activate function is called automatically when this screen is "switched in"
      * (ie. made active). Initialization logic can be placed here.
@@ -24,7 +27,7 @@ public:
      * (ie. made inactive). Teardown functionality can be placed here.
      */
     virtual void deactivate();
-
+    
     virtual ~MainPresenter() {};
 
 private:

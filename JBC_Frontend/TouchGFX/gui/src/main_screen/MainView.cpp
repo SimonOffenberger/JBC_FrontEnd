@@ -22,19 +22,7 @@ void MainView::tearDownScreen()
 }
 
 void MainView::handleTickEvent()
-{
-    tickCounter++;
-
-    // Insert each second tick
-    if (tickCounter % 2 == 0)
-    {
-        float yMax = SetPointGraph.getGraphRangeYMaxAsFloat();
-
-        // Insert "random" points along a sine wave
-        SetPointGraph.addDataPoint((int)(SetTemp));
-        CurrTempGraph.addDataPoint((int)((sinf(tickCounter * .04f) + 1) * (yMax / 2.2f)) + randomish(tickCounter) % (int)(yMax / 10.f));
-
-    }
+{    
 }
 
 void MainView::sliderValueChanged(int value)
@@ -79,10 +67,17 @@ void MainView::ButtonUPClicked(){
     SetTemp += 10;
     Unicode::snprintf(TextAreaSetPointBuffer, TEXTAREASETPOINT_SIZE, "%d",SetTemp);
     TextAreaSetPoint.invalidate();
+    presenter->SetNewSetTemp(SetTemp);
 }
 
 void MainView::ButtonDownClicked(){
     SetTemp -= 10;
     Unicode::snprintf(TextAreaSetPointBuffer, TEXTAREASETPOINT_SIZE, "%d",SetTemp);
     TextAreaSetPoint.invalidate();
+    presenter->SetNewSetTemp(SetTemp);
+}
+
+void MainView::SetNewCurrTemp(int CurrTemp){
+    CurrTempGraph.addDataPoint((int)(CurrTemp));
+    SetPointGraph.addDataPoint((int)(SetTemp));  
 }

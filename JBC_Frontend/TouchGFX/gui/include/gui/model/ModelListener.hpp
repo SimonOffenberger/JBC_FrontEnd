@@ -10,6 +10,8 @@ public:
 
     virtual ~ModelListener() {}
 
+    virtual void SetNewCurrTemp(int CurrTemp);
+
     void bind(Model* m)
     {
         model = m;

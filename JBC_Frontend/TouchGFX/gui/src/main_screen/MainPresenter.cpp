@@ -16,3 +16,13 @@ void MainPresenter::deactivate()
 {
 
 }
+
+void MainPresenter::SetNewSetTemp(int SetTemp)
+{
+    model->setNewSetTemp(SetTemp);
+}
+
+void MainPresenter::SetNewCurrTemp(int CurrTemp)
+{
+    view.SetNewCurrTemp(CurrTemp);
+}

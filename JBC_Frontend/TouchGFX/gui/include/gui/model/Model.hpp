@@ -14,6 +14,7 @@ public:
     {
         modelListener = listener;
     }
+    void setNewSetTemp(int SetTemp);
 
     void tick();
 protected:

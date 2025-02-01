@@ -13,6 +13,7 @@ public:
     virtual void tearDownScreen();
     virtual void ButtonUPClicked();
     virtual void ButtonDownClicked();
+    virtual void SetNewCurrTemp(int SetTemp);
 protected:
     int tickCounter;
     int SetTemp = 350;
