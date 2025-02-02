@@ -1,11 +1,11 @@
 Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
-MainView.cpp:19:6:virtual void MainView::tearDownScreen()	0	static
-MainView.cpp:80:6:virtual void MainView::SetNewCurrTemp(int)	8	static
+MainView.cpp:12:6:virtual void MainView::tearDownScreen()	0	static
+MainView.cpp:73:6:virtual void MainView::SetNewCurrTemp(int)	8	static
 MainView.hpp:11:13:MainView::~MainView()	8	static
 MainView.hpp:11:13:virtual MainView::~MainView()	8	static
-MainView.cpp:13:1:MainView::MainView()	8	static
-MainView.cpp:66:6:virtual void MainView::ButtonUPClicked()	16	static
-MainView.cpp:73:6:virtual void MainView::ButtonDownClicked()	16	static
-MainView.cpp:57:6:virtual void MainView::setupScreen()	0	static
-MainView.cpp:28:6:virtual void MainView::sliderValueChanged(int)	16	static
+MainView.cpp:6:1:MainView::MainView()	8	static
+MainView.cpp:59:6:virtual void MainView::ButtonUPClicked()	16	static
+MainView.cpp:66:6:virtual void MainView::ButtonDownClicked()	16	static
+MainView.cpp:50:6:virtual void MainView::setupScreen()	0	static
+MainView.cpp:21:6:virtual void MainView::sliderValueChanged(int)	16	static
