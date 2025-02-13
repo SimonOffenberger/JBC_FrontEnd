@@ -26,6 +26,7 @@
 /* USER CODE BEGIN Includes */
 #include "stm32f7508_discovery_sdram.h"
 #include "modbus_master.h"
+#include "jbc_powermodul.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -143,7 +144,6 @@ int main(void)
   MX_FMC_Init();
   MX_LTDC_Init();
   MX_USART1_UART_Init();
-  MX_USART6_UART_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
@@ -602,11 +602,13 @@ static void MX_GPIO_Init(void)
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
-
+  // RS485 Uart Init
+  MX_USART6_UART_Init();
   /* Infinite loop */
   for(;;)
   {
     osDelay(100);
+    collect_data();
   }
   /* USER CODE END 5 */
 }

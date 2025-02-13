@@ -267,8 +267,15 @@ uint8_t parseMessageTCU(uint8_t request,uint32_t * reg){
 	}
 	
 	switch(request){
-		case ModbusRequestReadRegister:
-			*reg= data[0];
+		case ModbusRequestReadAllRegister:
+			reg[0]= data[0];
+			reg[1]= data[1];
+		  reg[2]= data[2];
+		  reg[3]= data[3];
+			reg[4]= data[4];
+			reg[5]= data[5];
+		  reg[6]= data[6];
+		  reg[7]= data[7];
 			return 0;
 	}
 	return 1;
@@ -329,3 +336,11 @@ uint8_t modbus_handle_res(funcptr resendfunc,uint8_t request,uint32_t * data){
 	return 0;
 }
 
+
+void ModbusReadAllRegister(void){
+	Modbus_multipleRead(0,8);
+}
+
+void ModbusSetNewOutTemp1(){
+	
+}

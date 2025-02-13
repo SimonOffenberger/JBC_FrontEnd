@@ -47,7 +47,9 @@ typedef void (*funcptr)(void);
 // Response Frame Index
 #define ModbusFrameIndexByteCount 2
 
-#define ModbusRequestReadRegister   1
+#define ModbusRequestReadAllRegister   1
 
+void ModbusReadAllRegister(void);
+uint8_t modbus_handle_res(funcptr resendfunc,uint8_t request,uint32_t * data);
 
 #endif
