@@ -1,9 +1,8 @@
 #include "main.h"
 #include "modbus_master.h"
 #include "uart_rs485.h"
+
 uint8_t recFrame[MAXFRAMESIZE]={0};
-
-
 
 // Function Prototyps
 uint8_t modbus_handle_res(funcptr resendfunc,uint8_t request,uint32_t* data);
@@ -334,13 +333,4 @@ uint8_t modbus_handle_res(funcptr resendfunc,uint8_t request,uint32_t * data){
 	}
 	// return 0 -> OK
 	return 0;
-}
-
-
-void ModbusReadAllRegister(void){
-	Modbus_multipleRead(0,8);
-}
-
-void ModbusSetNewOutTemp1(){
-	
 }

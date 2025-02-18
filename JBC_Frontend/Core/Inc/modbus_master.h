@@ -48,8 +48,11 @@ typedef void (*funcptr)(void);
 #define ModbusFrameIndexByteCount 2
 
 #define ModbusRequestReadAllRegister   1
+#define ModbusRequestSetNewTemp        2
 
 void ModbusReadAllRegister(void);
 uint8_t modbus_handle_res(funcptr resendfunc,uint8_t request,uint32_t * data);
-
+void Modbus_singleWrite(uint16_t reg,uint16_t data);
+void Modbus_singleRead(uint16_t reg);
+void Modbus_multipleRead(uint16_t reg, uint16_t numReg);
 #endif

@@ -17,9 +17,9 @@
 		PARAM_ANZ_PARAMS											// 76 - muss immer letzter PARAM sein, wegen Gesamtanzahl		
 	};
 
-extern uint32_t P[8]={0};
+extern uint32_t P[8];
 
 void collect_data(void);
-
+void set_new_OUT_Temp(int Temperature);
 
 #endif

@@ -3,7 +3,6 @@
 
 extern "C"{
 #include "jbc_powermodul.h"
-extern uint32_t P[8];
 }
 
 
@@ -19,4 +18,5 @@ void Model::tick()
 
 void Model::setNewSetTemp(int newSetTemp)
 {
+  set_new_OUT_Temp(newSetTemp);
 }
