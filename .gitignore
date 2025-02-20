@@ -67,3 +67,4 @@ MDK-ARM/.vscode/c_cpp_properties.json
 *.lst
 .vscode
 MDK-ARM/EMischerV10A
+JBC_Frontend/TouchGFX/build/STM32F7508-DK/TouchGFX/gui/src/model/Model.o

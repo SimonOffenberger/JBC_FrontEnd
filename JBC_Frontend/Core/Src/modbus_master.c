@@ -223,7 +223,7 @@ static uint8_t get_msg(void){
 				if (expectedLength == framePos)
 				{
 						uint16_t recCRC = (uint16_t)	((recFrame[framePos-2] << 8) + recFrame[framePos-1]);
-						uint16_t calcedCRC = calc_CRC_master	(recFrame, framePos-2);
+						uint16_t calcedCRC = calc_CRC_master(recFrame, framePos-2);
 					
 					if (recCRC == calcedCRC)
 					{				

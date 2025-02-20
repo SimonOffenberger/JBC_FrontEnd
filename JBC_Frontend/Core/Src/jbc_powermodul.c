@@ -18,8 +18,7 @@ void collect_data(void){
 }
 
 void set_new_OUT_Temp(int Temperature){
-  P[PARAM_ACTUAL_TEMPERATURE_OUT1] = Temperature;
-  ModbusSetNewOutTemp1();
-  modbus_handle_res(ModbusSetNewOutTemp1,ModbusRequestSetNewTemp,P);
-
+  P[PARAM_SET_TEMPERATURE_OUT1] = Temperature;
+  // ModbusSetNewOutTemp1();
+  // modbus_handle_res(ModbusSetNewOutTemp1,ModbusRequestSetNewTemp,P);
 }
