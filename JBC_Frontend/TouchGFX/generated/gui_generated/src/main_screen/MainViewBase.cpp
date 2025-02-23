@@ -20,19 +20,20 @@ MainViewBase::MainViewBase() :
     background.setBitmap(touchgfx::Bitmap(BITMAP_BLUE_BACKGROUNDS_MAIN_BG_480X272PX_ID));
     add(background);
 
-    graphBackground.setPosition(0, 0, 480, 272);
+    graphBackground.setPosition(0, -1, 480, 272);
     graphBackground.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     graphBackground.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     graphBackground.setBorderSize(1);
     add(graphBackground);
 
-    textAreaState.setXY(428, 157);
-    textAreaState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textAreaState.setLinespacing(0);
-    textAreaState.setWildcard(touchgfx::TypedText(T_STATE).getText());
-    textAreaState.resizeToCurrentText();
-    textAreaState.setTypedText(touchgfx::TypedText(T_STATEBUF));
-    add(textAreaState);
+    textAreaCurrTemp.setXY(419, 157);
+    textAreaCurrTemp.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textAreaCurrTemp.setLinespacing(0);
+    Unicode::snprintf(textAreaCurrTempBuffer, TEXTAREACURRTEMP_SIZE, "%s", touchgfx::TypedText(T_STATE).getText());
+    textAreaCurrTemp.setWildcard(textAreaCurrTempBuffer);
+    textAreaCurrTemp.resizeToCurrentText();
+    textAreaCurrTemp.setTypedText(touchgfx::TypedText(T_CURRTEMPBUF));
+    add(textAreaCurrTemp);
 
     LabelSetPoint.setXY(407, 100);
     LabelSetPoint.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -40,18 +41,32 @@ MainViewBase::MainViewBase() :
     LabelSetPoint.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YK8M));
     add(LabelSetPoint);
 
-    LabelState.setXY(422, 141);
+    LabelState.setXY(422, 138);
     LabelState.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     LabelState.setLinespacing(0);
     LabelState.setTypedText(touchgfx::TypedText(T___SINGLEUSE_J1YW));
     add(LabelState);
+
+    CurrPowerGraph.setPosition(0, 0, 419, 289);
+    CurrPowerGraph.setScale(1);
+    CurrPowerGraph.setGraphRangeX(0, 100);
+    CurrPowerGraph.setGraphAreaMargin(10, 28, 19, 22);
+    CurrPowerGraph.setGraphAreaPadding(2, 6, 0, 6);
+    CurrPowerGraph.setGraphRangeY(0, 1000);
+    CurrPowerGraphLine1Painter.setColor(touchgfx::Color::getColorFromRGB(0, 79, 22));
+    CurrPowerGraphLine1.setPainter(CurrPowerGraphLine1Painter);
+    CurrPowerGraphLine1.setLineWidth(2);
+    CurrPowerGraph.addGraphElement(CurrPowerGraphLine1);
+
+
+    add(CurrPowerGraph);
 
     SetPointGraph.setPosition(0, -1, 419, 290);
     SetPointGraph.setScale(1);
     SetPointGraph.setGraphRangeX(0, 100);
     SetPointGraph.setGraphAreaMargin(10, 28, 19, 22);
     SetPointGraph.setGraphAreaPadding(2, 6, 0, 6);
-    SetPointGraph.setGraphRangeY(100, 500);
+    SetPointGraph.setGraphRangeY(250, 450);
     SetPointGraphMajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     SetPointGraphMajorXAxisGrid.setInterval(10);
     SetPointGraphMajorXAxisGrid.setLineWidth(1);
@@ -59,7 +74,7 @@ MainViewBase::MainViewBase() :
     SetPointGraph.addGraphElement(SetPointGraphMajorXAxisGrid);
 
     SetPointGraphMajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    SetPointGraphMajorYAxisGrid.setInterval(40);
+    SetPointGraphMajorYAxisGrid.setInterval(10);
     SetPointGraphMajorYAxisGrid.setLineWidth(1);
     SetPointGraphMajorYAxisGrid.setScale(1);
     SetPointGraph.addGraphElement(SetPointGraphMajorYAxisGrid);
@@ -75,7 +90,6 @@ MainViewBase::MainViewBase() :
     SetPointGraphLine1.setLineWidth(2);
     SetPointGraph.addGraphElement(SetPointGraphLine1);
 
-
     add(SetPointGraph);
 
     CurrTempGraph.setPosition(0, 0, 419, 289);
@@ -83,7 +97,7 @@ MainViewBase::MainViewBase() :
     CurrTempGraph.setGraphRangeX(0, 100);
     CurrTempGraph.setGraphAreaMargin(10, 28, 19, 22);
     CurrTempGraph.setGraphAreaPadding(2, 6, 0, 6);
-    CurrTempGraph.setGraphRangeY(100, 500);
+    CurrTempGraph.setGraphRangeY(250, 450);
     CurrTempGraphLine1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     CurrTempGraphLine1.setPainter(CurrTempGraphLine1Painter);
     CurrTempGraphLine1.setLineWidth(2);
@@ -101,7 +115,7 @@ MainViewBase::MainViewBase() :
     ButtonDown.setAction(buttonCallback);
     add(ButtonDown);
 
-    TextAreaSetPoint.setXY(425, 116);
+    TextAreaSetPoint.setXY(422, 116);
     TextAreaSetPoint.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     TextAreaSetPoint.setLinespacing(0);
     Unicode::snprintf(TextAreaSetPointBuffer, TEXTAREASETPOINT_SIZE, "%s", touchgfx::TypedText(T_TEMPERATUR).getText());

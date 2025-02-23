@@ -15,6 +15,7 @@ public:
 
     virtual void SetNewSetTemp(int SetTemp);
     virtual void SetNewCurrTemp(int CurrTemp);
+    virtual void SetNewCurrPower(int Power);
 
     /**
      * The activate function is called automatically when this screen is "switched in"

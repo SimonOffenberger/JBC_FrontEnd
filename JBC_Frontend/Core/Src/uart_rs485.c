@@ -9,7 +9,7 @@ volatile UART_rs485_protocol_var 	uart_rs485_flags;			// deklaration der uart de
 /// @brief RX Callback der UART
 /// @param  void
 void UART_RS485_rx_callback(void){
-//	FREE_IO1_ON();
+	HAL_GPIO_WritePin(GPIOG,GPIO_PIN_7,GPIO_PIN_SET);
 	uart_rs485_flags.rx_buffer[uart_rs485_flags.rx_wPos] = uart_rs485_flags.rcv_byte;
 		if (++uart_rs485_flags.rx_wPos >= UART_RX_RS485_BUFFER_SIZE) {
 				uart_rs485_flags.rx_wPos = 0;
@@ -20,7 +20,8 @@ void UART_RS485_rx_callback(void){
 				}
 		}
 	HAL_UART_Receive_IT(&huart6,(uint8_t *) &uart_rs485_flags.rcv_byte,1);
-//	FREE_IO1_OFF();
+	HAL_GPIO_WritePin(GPIOG,GPIO_PIN_7,GPIO_PIN_RESET);
+
 }
 
 /// @brief TX Callback der Uart 

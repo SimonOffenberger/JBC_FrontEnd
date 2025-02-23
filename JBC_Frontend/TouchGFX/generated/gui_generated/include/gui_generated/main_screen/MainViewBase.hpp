@@ -14,8 +14,8 @@
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/graph/GraphScroll.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
-#include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/Button.hpp>
 
 class MainViewBase : public touchgfx::View<MainPresenter>
@@ -48,9 +48,12 @@ protected:
     touchgfx::Box __background;
     touchgfx::Image background;
     touchgfx::BoxWithBorder graphBackground;
-    touchgfx::TextAreaWithOneWildcard textAreaState;
+    touchgfx::TextAreaWithOneWildcard textAreaCurrTemp;
     touchgfx::TextArea LabelSetPoint;
     touchgfx::TextArea LabelState;
+    touchgfx::GraphScroll<101> CurrPowerGraph;
+    touchgfx::GraphElementLine CurrPowerGraphLine1;
+    touchgfx::PainterRGB565 CurrPowerGraphLine1Painter;
     touchgfx::GraphScroll<101> SetPointGraph;
     touchgfx::GraphElementGridX SetPointGraphMajorXAxisGrid;
     touchgfx::GraphElementGridY SetPointGraphMajorYAxisGrid;
@@ -67,6 +70,8 @@ protected:
     /*
      * Wildcard Buffers
      */
+    static const uint16_t TEXTAREACURRTEMP_SIZE = 4;
+    touchgfx::Unicode::UnicodeChar textAreaCurrTempBuffer[TEXTAREACURRTEMP_SIZE];
     static const uint16_t TEXTAREASETPOINT_SIZE = 4;
     touchgfx::Unicode::UnicodeChar TextAreaSetPointBuffer[TEXTAREASETPOINT_SIZE];
 

@@ -26,3 +26,8 @@ void MainPresenter::SetNewCurrTemp(int CurrTemp)
 {
     view.SetNewCurrTemp(CurrTemp);
 }
+
+void MainPresenter::SetNewCurrPower(int Power)
+{
+    view.SetNewCurrPower(Power);
+}

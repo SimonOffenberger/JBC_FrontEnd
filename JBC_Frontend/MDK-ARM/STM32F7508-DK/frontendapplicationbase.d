@@ -70,12 +70,12 @@ stm32f7508-dk/frontendapplicationbase.o: \
   ..\middlewares\st\touchgfx\framework\include\touchgfx\widgets\graph\GraphElements.hpp \
   ..\middlewares\st\touchgfx\framework\include\touchgfx\widgets\canvas\Canvas.hpp \
   ..\middlewares\st\touchgfx\framework\include\touchgfx\widgets\canvas\CanvasWidget.hpp \
-  ..\middlewares\st\touchgfx\framework\include\touchgfx\widgets\graph\GraphLabels.hpp \
   ..\middlewares\st\touchgfx\framework\include\touchgfx\widgets\canvas\PainterRGB565.hpp \
   ..\middlewares\st\touchgfx\framework\include\platform\driver\lcd\LCD16bpp.hpp \
   ..\middlewares\st\touchgfx\framework\include\touchgfx\lcd\LCD16DebugPrinter.hpp \
   ..\middlewares\st\touchgfx\framework\include\touchgfx\widgets\canvas\AbstractPainterColor.hpp \
   ..\middlewares\st\touchgfx\framework\include\touchgfx\widgets\canvas\AbstractPainterRGB565.hpp \
+  ..\middlewares\st\touchgfx\framework\include\touchgfx\widgets\graph\GraphLabels.hpp \
   ..\middlewares\st\touchgfx\framework\include\touchgfx\widgets\Button.hpp \
   ..\middlewares\st\touchgfx\framework\include\touchgfx\widgets\AbstractButton.hpp \
   ..\touchgfx\generated\texts\include\texts\TextKeysAndLanguages.hpp

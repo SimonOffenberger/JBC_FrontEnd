@@ -73,4 +73,10 @@ void MainView::ButtonDownClicked(){
 void MainView::SetNewCurrTemp(int CurrTemp){
     CurrTempGraph.addDataPoint((int)(CurrTemp));
     SetPointGraph.addDataPoint((int)(SetTemp));  
+    Unicode::snprintf(textAreaCurrTempBuffer, TEXTAREACURRTEMP_SIZE, "%d",CurrTemp);
+    textAreaCurrTemp.invalidate();
+}
+
+void MainView::SetNewCurrPower(int Power){
+    //CurrPowerGraph.addDataPoint((int)(Power));  
 }

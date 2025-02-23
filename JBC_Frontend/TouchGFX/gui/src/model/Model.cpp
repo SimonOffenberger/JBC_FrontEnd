@@ -13,10 +13,11 @@ Model::Model() : modelListener(0)
 
 void Model::tick()
 {
-  modelListener->SetNewCurrTemp(P[PARAM_ACTUAL_TEMPERATURE_OUT1]);  
+  modelListener->SetNewCurrTemp(P[4]/10);  
+  modelListener->SetNewCurrPower(P[5]);
 }
 
 void Model::setNewSetTemp(int newSetTemp)
 {
-  set_new_OUT_Temp(newSetTemp);
+  P[3] = newSetTemp*10;
 }

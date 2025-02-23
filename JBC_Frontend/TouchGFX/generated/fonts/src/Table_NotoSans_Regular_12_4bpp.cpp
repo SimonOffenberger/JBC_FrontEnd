@@ -18,11 +18,7 @@ KEEP extern const touchgfx::GlyphNode glyphs_NotoSans_Regular_12_4bpp[] FONT_TAB
     {   248, 0x0037,   7,   9,   9,   0,   7,   0,   0, 0x00 },
     {   284, 0x0038,   7,   9,   9,   0,   7,   0,   0, 0x00 },
     {   320, 0x0039,   7,   9,   9,   0,   7,   0,   0, 0x00 },
-    {   356, 0x003F,   5,   9,   9,   0,   5,   0,   0, 0x00 },
-    {   383, 0x0049,   4,   9,   9,   0,   4,   0,   0, 0x00 },
-    {   401, 0x0064,   7,  10,  10,   0,   7,   0,   0, 0x00 },
-    {   441, 0x0065,   7,   7,   7,   0,   7,   0,   0, 0x00 },
-    {   469, 0x006C,   2,  10,  10,   1,   3,   0,   0, 0x00 }
+    {   356, 0x003F,   5,   9,   9,   0,   5,   0,   0, 0x00 }
 };
 
 // NotoSans_Regular_12_4bpp
@@ -40,6 +36,6 @@ touchgfx::GeneratedFont& getFont_NotoSans_Regular_12_4bpp();
 
 touchgfx::GeneratedFont& getFont_NotoSans_Regular_12_4bpp()
 {
-    static touchgfx::GeneratedFont NotoSans_Regular_12_4bpp(glyphs_NotoSans_Regular_12_4bpp, 19, 14, 12, 0, 0, 4, 1, 0, 0, unicodes_NotoSans_Regular_12_4bpp, kerning_NotoSans_Regular_12_4bpp, 63, 0, 0, 0);
+    static touchgfx::GeneratedFont NotoSans_Regular_12_4bpp(glyphs_NotoSans_Regular_12_4bpp, 15, 14, 12, 0, 0, 4, 1, 0, 0, unicodes_NotoSans_Regular_12_4bpp, kerning_NotoSans_Regular_12_4bpp, 63, 0, 0, 0);
     return NotoSans_Regular_12_4bpp;
 }

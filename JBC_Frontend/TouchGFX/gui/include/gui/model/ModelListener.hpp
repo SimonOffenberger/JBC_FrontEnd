@@ -11,6 +11,7 @@ public:
     virtual ~ModelListener() {}
 
     virtual void SetNewCurrTemp(int CurrTemp);
+    virtual void SetNewCurrPower(int Power);
 
     void bind(Model* m)
     {

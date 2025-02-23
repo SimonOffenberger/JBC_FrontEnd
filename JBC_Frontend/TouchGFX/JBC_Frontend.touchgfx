@@ -15,6 +15,7 @@
           {
             "Type": "BoxWithBorder",
             "Name": "graphBackground",
+            "Y": -1,
             "Width": 480,
             "Height": 272,
             "Color": {
@@ -26,16 +27,18 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textAreaState",
-            "X": 428,
+            "Name": "textAreaCurrTemp",
+            "X": 419,
             "Y": 157,
-            "Width": 31,
+            "Width": 50,
             "Height": 19,
-            "TextId": "StateBuf",
+            "TextId": "CurrTempBuf",
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "State"
+              "TextId": "State",
+              "UseBuffer": true,
+              "BufferSize": 4
             }
           },
           {
@@ -53,12 +56,44 @@
             "Type": "TextArea",
             "Name": "LabelState",
             "X": 422,
-            "Y": 141,
-            "Width": 43,
+            "Y": 138,
+            "Width": 45,
             "Height": 19,
             "TextId": "__SingleUse_J1YW",
             "TextRotation": "0",
             "AutoSize": true
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "CurrPowerGraph",
+            "Width": 419,
+            "Height": 289,
+            "DataSeed": -1707652602,
+            "NumberOfValues": 101,
+            "MaxY": 1000.0,
+            "Precision": "1",
+            "UseCustomVisibleDataPointRange": true,
+            "LastIndex": 100,
+            "XAxisScale": 1.0,
+            "LabelSizeTop": 10,
+            "LabelSizeBottom": 22,
+            "LabelSizeLeft": 28,
+            "LabelSizeRight": 19,
+            "PaddingTop": 2,
+            "PaddingBottom": 6,
+            "PaddingLeft": 6,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "FileNameImage": "",
+                "Color": {
+                  "Green": 79,
+                  "Blue": 22
+                }
+              }
+            ]
           },
           {
             "Type": "DynamicGraph",
@@ -68,8 +103,8 @@
             "Height": 290,
             "DataSeed": -1707652602,
             "NumberOfValues": 101,
-            "MaxY": 500.0,
-            "MinY": 100.0,
+            "MaxY": 450.0,
+            "MinY": 250.0,
             "Precision": "1",
             "UseCustomVisibleDataPointRange": true,
             "LastIndex": 100,
@@ -101,7 +136,7 @@
             },
             "YAxisGrid": {
               "Type": "GraphGrid",
-              "Interval": 40.0,
+              "Interval": 10.0,
               "LineWidth": 1
             },
             "YAxisLabel": {
@@ -120,8 +155,8 @@
             "Height": 289,
             "DataSeed": -1707652602,
             "NumberOfValues": 101,
-            "MaxY": 500.0,
-            "MinY": 100.0,
+            "MaxY": 450.0,
+            "MinY": 250.0,
             "Precision": "1",
             "UseCustomVisibleDataPointRange": true,
             "LastIndex": 100,
@@ -168,7 +203,7 @@
           {
             "Type": "TextArea",
             "Name": "TextAreaSetPoint",
-            "X": 425,
+            "X": 422,
             "Y": 116,
             "Width": 50,
             "Height": 19,

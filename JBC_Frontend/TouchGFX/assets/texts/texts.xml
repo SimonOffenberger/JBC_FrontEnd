@@ -10,19 +10,19 @@
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="State" Alignment="Left" TypographyId="labels">
-        <Translation Language="GB">Idle</Translation>
+        <Translation Language="GB">350</Translation>
       </Text>
       <Text Id="Temperatur" Alignment="Left" TypographyId="labels">
         <Translation Language="GB">350</Translation>
       </Text>
-      <Text Id="StateBuf" Alignment="Left" TypographyId="Typography_00">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+      <Text Id="CurrTempBuf" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;°C</Translation>
       </Text>
       <Text Id="__SingleUse_YK8M" Alignment="Left" TypographyId="Typography_00">
         <Translation Language="GB">Set Point</Translation>
       </Text>
       <Text Id="__SingleUse_J1YW" Alignment="Left" TypographyId="Typography_00">
-        <Translation Language="GB">State</Translation>
+        <Translation Language="GB">Temp</Translation>
       </Text>
       <Text Id="TempSetPointBuf" Alignment="Left" TypographyId="Typography_00">
         <Translation Language="GB">&lt;value&gt;°C</Translation>

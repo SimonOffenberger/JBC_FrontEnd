@@ -14,6 +14,7 @@ public:
     virtual void ButtonUPClicked();
     virtual void ButtonDownClicked();
     virtual void SetNewCurrTemp(int SetTemp);
+    virtual void SetNewCurrPower(int Power);
 protected:
     int tickCounter;
     int SetTemp = 350;
